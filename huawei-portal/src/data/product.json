@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "type": "Connect Industry Certification",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product connect with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"huawei-produt"
+  },
+  {
+    "id": 1,
+    "type": "ONAP Docking Verification",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product conncet with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"compliance"
+  },
+  {
+    "id": 2,
+    "type": "ONAP Custom Validation",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product connect with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"products"
+  },
+  {
+    "id": 3,
+    "type": "ONAP Custom Validation",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product conncet with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"reports"
+  },
+  {
+    "id": 4,
+    "type": "Connect Industry Certification",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product conncet with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"huawei-produt"
+  },
+  {
+    "id": 5,
+    "type": "ONAP Docking Verification",
+    "assetnumber": 123456,
+    "info": "ProductTypeInfo",
+    "specifications": "product conncet with ONAP",
+    "productname": "ProductName",
+    "file": "",
+    "image":"reports"
+  }
+]

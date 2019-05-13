@@ -1,0 +1,96 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Add a Product</h4>
+    </div>
+
+    <div class="panel-body">
+
+      <form #newProductForm="ngForm" (ngSubmit)="addNewProduct(newProductForm.value)">
+        <div class="form-group col-sm-4">
+          <label for="description" class="">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Description"
+            name="description"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-4">
+          <label for="assetnumber" class="">Asset Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Assetnumber"
+            name="assetnumber"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-4">
+          <label for="product-type" class="">Product Type</label>
+          <select
+            name="type"
+            id="product-type"
+            class="form-control"
+            ngModel
+            required>
+            <option
+              *ngFor="let type of productTypes"
+              [value]="type">
+                {{ utilService.capitalize(type) }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="specifications" class="">Specifications</label>
+          <textarea
+            type="text"
+            rows="5"
+            class="form-control"
+            placeholder="Specifications"
+            name="specifications"
+            ngModel
+            required>
+          </textarea>
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="rom" class="">ROM</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="ROM"
+            name="bedrooms"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="ram" class="">RAM</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="RAM"
+            name="bathrooms"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="file" class="">AddFile</label>
+          <input
+            type="file"
+            class="form-control"
+            name="area"
+            ngModel
+            required>
+        </div>
+        <div class="form-group col-sm-12">
+          <button
+            class="btn btn-primary listing-button"
+            type="submit"
+            ng-show="addListing">
+              Add
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>

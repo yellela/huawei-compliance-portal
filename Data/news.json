@@ -1,0 +1,10 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "ComplianceNews",
+      "news": "Formed in March 2017, the ONAP project brings together over 50 of the largest network and cloud operators and technology providers from around the globe–representing more than 70% of the world’s mobile subscribers–to deliver an open, standards-driven architecture and implementation platform to rapidly instantiate and automate differentiated new services, and support complete lifecycle management."
+    }
+    
+  ]
+}

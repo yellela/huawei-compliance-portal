@@ -1,0 +1,30 @@
+<div class="container pad-2p pad-top-7p">
+<div class="flex-end pad-btm-2p">
+  <button type="button"  class="btn btn-info " data-toggle="modal" data-target="#myModal">AddNews</button>
+</div>
+<div class="modal fade pad-top-7p" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">  
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">AddNews</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-group" id = "addNewsForm" name ="addNewsForm " #addNewsForm = "ngForm" (ngSubmit) = "addNews(addNewsForm.value)" >
+              <label for="Testcasename"class="">Title:</label><input class="form-control" type="text" id = "title" name="title" placeholder="Title" ngModel><br>
+              <label for="Testcasename"class="">News:</label><textarea rows="6" cols="100"  class="form-control" type="text" id = "news" name="news" placeholder="AddNews" ngModel></textarea><br>
+              <input class="form-control btn-info" type="submit" value="AddNews">
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor = "let news of News" >
+  <h3>{{news.title}}</h3>
+  <p>{{news.news}}</p>
+  <li><a>Readmore</a></li>
+</div>
+</div>

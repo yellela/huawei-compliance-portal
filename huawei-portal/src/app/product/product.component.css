@@ -1,0 +1,14 @@
+.thumbnail {
+  min-height: 380px;
+}
+
+.label {
+  display: inline-block;
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.min-hgt-330{
+  min-height: 380px;
+}

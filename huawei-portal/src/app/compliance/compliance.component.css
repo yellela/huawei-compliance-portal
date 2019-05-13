@@ -1,0 +1,78 @@
+
+#Add::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#Add {
+  background: #063d6db3;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1%;
+  position: relative;
+  text-transform: uppercase;
+}
+
+#Add::before,
+#Add::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+#Add:hover {
+  color: black;
+  background:#2da7e4;
+}
+
+/* BUTTON 1 */
+#Add::after {
+  height: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.Add:hover:after {
+  height: 100%;
+}
+
+.delete-btn{    
+    background: #ef413d;
+    border: 1px solid #ef413d;
+    color: white;
+}
+.edit-btn{
+    background: #0869bd;
+    border: 1px solid #0869bd;
+    color: white;
+}
+.update-form-feilds{
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.nav-props{
+    padding: 7%;
+    background: #011e38fa;
+    color: white;
+    border: 1px solid gainsboro;
+}
+.pad-7p{
+  padding: 7%;
+}
+
+.bdr-rgt-none{
+  border-right: none;
+}
+.bdr-lft-none{
+   border-left: none;
+}

@@ -1,0 +1,63 @@
+<div class="container pad-top-7p">
+<h4>Reports</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nisi sapiente error ex ab, asperiores velit illum aut officia voluptatibus. Odio molestias
+   non veniam sequi eum voluptate incidunt modi vel!
+   <br>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto unde possimus rerum fugiat iure ab, vero facilis minima maxime repellat inventore molestias 
+  voluptatem officia ratione commodi error accusamus odio necessitatibus!
+</p>
+<!--Reports-->
+<div class="panel panel-default pad-2p text-center">
+  <form class="form-group form-inline mar-0" id = "addReportForm" name ="addNewTestcase" #report = "ngForm" (ngSubmit) = "newReport(report.value)" >
+    <label for="id"class="">Product:</label>
+    <select class="form-control" name="product" form ="addReportForm" ngModel>
+        <option>Select</option>
+        <option>product1</option>
+        <option>product2</option>
+        <option>product3</option>
+        <option>product4</option>
+      </select>
+    <label for="Testcasename"class="">TestcaseName:</label><input class="form-control" type="text" id = "testcase" name="testcase" placeholder="TestcaseName" ngModel>
+    <label for="Testcasename"class="">TestEnvironment:</label><input class="form-control" type="text" id = "address" name="address" placeholder="TestEnvironment" ngModel>
+    <input class="form-control btn-info" type="submit" value="GenerateReport">
+  </form>
+</div>
+<table class="table-striped table-bordered table-hover width-100">
+    <thead>
+      <th class="text-center pad-1p">S.No</th>
+      <th class="text-center pad-1p bdr">Product</th>
+      <th class="text-center pad-1p bdr">Testcase</th>
+      <th class="text-center pad-1p">Reports</th>
+    </thead>
+    <tbody>
+    <tr *ngFor = 'let report of reports; let i = index'>
+      <td class="text-center">{{ i+1 }}</td>
+      <td class="text-center">{{ report.product }}</td>
+      <td class="text-center">{{ report.Testcase }}</td>
+      <td class="text-center" >
+      <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon-list-alt"></span> 
+      </button>
+
+        <!-- Modal -->
+        <div class="modal fade pad-top-7p" id="myModal" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">TestCaseReport</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{report.Reports }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

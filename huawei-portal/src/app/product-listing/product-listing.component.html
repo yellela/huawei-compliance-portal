@@ -1,0 +1,191 @@
+<div class="flex pad-2p pad-top-7p">
+<!--ProductsTypesList-->
+<nav class="col-md-3">
+    <!--Add_Product-->
+    <button type="button" class="btn btn-info width-100 mar-btm-5p" data-toggle="modal" data-target="#myModal">Add New Product</button>
+
+  <!-- Modal -->
+  <div class="modal fade pad-top-7p" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>Add a Product</h4>
+              </div>
+          
+              <div class="panel-body">
+          
+                <form #newProductForm="ngForm" (ngSubmit)="addNewProduct(newProductForm.value)">
+                  <div class="form-group col-sm-3">
+                      <label for="rom" class="">ProductName</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="ProductName"
+                        name= "productname"
+                        ngModel
+                        required>
+                    </div>
+                  <div class="form-group col-sm-4">
+                    <label for="assetnumber" class="">Asset Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Assetnumber"
+                      name="assetnumber"
+                      ngModel
+                      required>
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="product-type" class="">Product Type</label>
+                    <select
+                      name="type"
+                      id="product-type"
+                      class="form-control"
+                      ngModel
+                      required>
+                      <option
+                        *ngFor="let type of productTypes"
+                        [value]="type">
+                          {{ utilService.capitalize(type) }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="specifications" class="">Specifications</label>
+                    <textarea
+                      type="text"
+                      rows="5"
+                      class="form-control"
+                      placeholder="Specifications"
+                      name="specifications"
+                      ngModel
+                      required>
+                    </textarea>
+                  </div>
+                  <div class="form-group col-sm-4">
+                      <label for="info" class="">ProductInfo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Description"
+                        name="info"
+                        ngModel
+                        required>
+                    </div>
+            
+                  <div class="form-group col-sm-6">
+                    <label for="file" class="">AddFile</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      name="file"
+                      ngModel
+                      required>
+                  </div>
+                  <div class="form-group col-sm-12">
+                    <button
+                      class="btn btn-primary listing-button"
+                      type="submit"
+                      ng-show="addListing">
+                        Add
+                    </button>
+                  </div>
+                </form>
+          
+              </div>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--Products_FunctionList-->
+    <ul class="nav bg-navi-blue">
+      <li class="pad-5 pad-right-0  bg-navi clr-white bdr-btm"  data-toggle="collapse" data-target="#submenu1">Connect Industry Certification 
+        <span  class="toggle-custom pad-5 " id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">
+          <span class="glyphicon glyphicon-plus " aria-hidden="true"></span>
+      </span>
+        <ul class="nav collapse " id="submenu1" role="menu" aria-labelledby="btn-1">
+          <li class="pad-5 pad-right-0 bdr-btm bg-gry ">Product-1</li>
+          <li class="pad-5 pad-right-0 bdr-btm bg-gry">Product-2</li>
+          <li class="pad-5 pad-right-0   bg-gry">Product-3</li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav bg-navi-blue">
+        <li class="pad-5 pad-right-0  bg-navi clr-white bdr-btm" data-toggle="collapse" data-target="#submenu2">ONAP Docking Verification
+          <span  class="toggle-custom pad-5 " id="btn-1" data-toggle="collapse" data-target="#submenu2" aria-expanded="false">
+            <span class="glyphicon glyphicon-plus " aria-hidden="true"></span>
+        </span>
+          <ul class="nav collapse" id="submenu2" role="menu" aria-labelledby="btn-1">
+            <li class="pad-5 pad-right-0 bdr-btm bg-gry">Product-1</li>
+            <li class="pad-5 pad-right-0 bdr-btm bg-gry">Product-2</li>
+            <li class="pad-5 pad-right-0  bg-gry">Product-3</li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav bg-navi-blue" >
+          <li class="pad-5 pad-right-0  bg-navi clr-white bdr-btm" data-toggle="collapse" data-target="#submenu3">ONAP Custom Validation
+            <span  class="toggle-custom pad-5 " id="btn-1" data-toggle="collapse" data-target="#submenu3" aria-expanded="false">
+              <span class="glyphicon glyphicon-plus " aria-hidden="true"></span>
+          </span>
+            <ul class="nav collapse" id="submenu3" role="menu" aria-labelledby="btn-1">
+              <li class="pad-5 pad-right-0 bdr-btm bg-gry">Product-1</li>
+              <li class="pad-5 pad-right-0 bdr-btm bg-gry">Product-2</li>
+              <li class="pad-5 pad-right-0  bg-gry">Product-3</li>
+            </ul>
+          </li>
+        </ul>
+  </nav>
+<!--products Filter-->
+<div class="row col-md-9">
+  <div class="col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-4">
+          <label for="sort-field">Sort By</label>
+          <select
+            class="form-control"
+            name="sort-field"
+            id="sort-field"
+            [(ngModel)]="sortField">
+            <option
+              *ngFor="let field of sortFields"
+              [value]="field">
+                {{ utilService.capitalize(field) }}
+              </option>
+          </select>
+        </div>
+        <div class="col-sm-4">
+          <label for="sort-direction">Sort Direction</label>
+          <div>
+
+            <button
+              class="btn btn-primary"
+              [ngClass]="{'btn-success': sortDirection == 'asc'}"
+              (click)="sortDirection = 'asc'">
+                Asc
+            </button>
+
+            <button
+              class="btn btn-primary"
+              [ngClass]="{'btn-success': sortDirection == 'desc'}"
+              (click)="sortDirection = 'desc'">
+                Desc
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Produts-->
+  <div *ngFor="let product of products | sortBy: [sortField, sortDirection]">
+    <app-product [product]="product" class="col-sm-4"></app-product>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+</div>
+</div>

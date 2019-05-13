@@ -1,0 +1,29 @@
+.toggle-custom {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+.toggle-custom[aria-expanded='true'] .glyphicon-plus:before {
+  content: "\2212";
+}
+.pad-5{
+  padding: 5%;
+}
+.pad-right-0{
+  padding-right: 0;
+}
+.pad-btm-0{
+  padding-bottom: 0;
+}
+.bg-navi{
+  background: bottom;
+}
+.bdr-btm{
+  border-bottom: 1px solid gainsboro;
+}
+.clr-white{
+  color: white;
+}
+.bg-gry{
+ background: #a9a9a947
+}

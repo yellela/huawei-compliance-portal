@@ -1,0 +1,54 @@
+<div  class="thumbnail card " >
+    <img routerLink="/CompliancePlatform" routerLinkActive="active" src="assets/images/{{ product.image }}.jpg" alt="product thumbnail">
+
+  <div class="caption">
+    <div *ngIf="!product.showDetails">
+
+      <h4>
+        <span class="label label-primary">
+          {{ product.productname }}
+        </span>
+      </h4>
+      <h5>
+          <span class="glyphicon glyphicon-book"></span>
+          {{ product.info }}
+      </h5>
+      <h4>
+          <i class="glyphicon glyphicon-tag"></i>
+            {{ product.assetnumber }}
+        </h4>
+      <hr>
+
+      <button
+        class="btn btn-sm btn-success"
+        *ngIf="!product.showDetails"
+        (click)="product.showDetails = !product.showDetails">
+        Details
+      </button>
+
+    </div>
+
+    <div *ngIf="product.showDetails">
+      <div class="details">
+        <h4>
+          <span class="label label-primary">
+            {{ product.type }}
+          </span>
+        </h4>
+
+        <p>{{ product.specifications }}</p>
+
+        <hr>
+
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="product.showDetails = !product.showDetails">
+          Close
+        </button>
+        <button (click)="product.showDetails = !product.showDetails" class="btn btn-sm btn-primary" routerLink="/moreInfo" routerLinkActive="router-link-active">MoreInfo
+
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

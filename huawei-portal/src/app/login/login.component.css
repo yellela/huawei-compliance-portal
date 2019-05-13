@@ -1,0 +1,42 @@
+.login-bg{
+    position: absolute;
+    width: 100%;
+    min-height:650px;
+    z-index: 10000;
+    top:0px;
+    background-image:url("../../assets/images/login_background.jpg")
+}
+.log-form{
+    position: absolute;
+    left: 28%;
+    top: 15%;
+    padding: 2%;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+.box-login{
+  background: transparent;
+}
+.clr-white{
+    color: white;
+}
+.clr-brown{
+   color: #a02724
+}
+::placeholder{
+    color: rgba(0, 0, 0, 0.541)
+}
+.hgt-55x{
+    height: 55px;
+}
+.ft-size-43{
+    font-size: 43px;
+}
+.pad-5p{
+    padding: 5%;
+}
+.mar-4p{
+    margin: 4%;
+}
+.mar-top-8{
+    margin-top: 8%;
+}
